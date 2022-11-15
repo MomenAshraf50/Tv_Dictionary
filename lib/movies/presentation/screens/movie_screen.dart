@@ -7,6 +7,7 @@ import 'package:tv_dictionary/movies/presentation/components/populre_component.d
 import 'package:tv_dictionary/movies/presentation/components/top_rated_component.dart';
 import 'package:tv_dictionary/movies/presentation/controller/movies_bloc.dart';
 import 'package:tv_dictionary/movies/presentation/controller/movies_event.dart';
+import 'package:tv_dictionary/movies/presentation/screens/see_more_screen.dart';
 
 class MoviesScreen extends StatelessWidget {
   const MoviesScreen({Key? key}) : super(key: key);
@@ -24,96 +25,11 @@ class MoviesScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const NowPlayingComponent(),
-              Container(
-                margin: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Popular",
-                      style: GoogleFonts.poppins(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.15,
-                        color: Colors.white,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        /// TODO : NAVIGATION TO POPULAR SCREEN
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: const [
-                            Text(
-                              'See More',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: 16.0,
-                              color: Colors.white,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const PopularComponent(),
-              Container(
-                margin: const EdgeInsets.fromLTRB(
-                  16.0,
-                  24.0,
-                  16.0,
-                  8.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Top Rated",
-                      style: GoogleFonts.poppins(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.15,
-                        color: Colors.white,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        /// TODO : NAVIGATION TO Top Rated Movies Screen
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: const [
-                            Text(
-                              'See More',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: 16.0,
-                              color: Colors.white,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const TopRatedComponent(),
-              const SizedBox(height: 50.0),
+            children: const [
+              NowPlayingComponent(),
+              PopularComponent(),
+              TopRatedComponent(),
+              SizedBox(height: 50.0),
             ],
           ),
         ),
