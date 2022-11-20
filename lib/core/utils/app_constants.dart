@@ -9,4 +9,10 @@ class AppConstants{
   static String getRecommendationEndPoint(int movieId) => '/movie/$movieId/recommendations$apiKey';
 
   static String imageUrl(String backdropPath) => '$baseImageUrl$backdropPath';
+
+
+  static const onAirEndPoint= '/tv/on_the_air$apiKey';
+  static const topRatedSeriesEndPoint= '/tv/popular$apiKey';
+  static const popularSeriesEndPoint= '/tv/top_rated$apiKey';
+
 }
